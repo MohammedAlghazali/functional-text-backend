@@ -1,0 +1,48 @@
+{
+  "name": "functional-text-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "start": "env-cmd -f .env.production npm run build && node ./dist",
+    "dev": "env-cmd -f .env.development nodemon ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MohammedAlghazali/functional-text-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MohammedAlghazali/functional-text-backend/issues"
+  },
+  "homepage": "https://github.com/MohammedAlghazali/functional-text-backend#readme",
+  "devDependencies": {
+    "@types/compression": "^1.7.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "jest": "^28.0.3",
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.3",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "env-cmd": "^10.1.0",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.1",
+    "uninstall": "0.0.0",
+    "yup": "^0.32.11"
+  }
+}
