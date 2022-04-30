@@ -15,8 +15,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "functional-text-api"
           heroku_email: ${{secrets.EMAIL}}
-          usedocker: true
-          docker_build_args: |
-            NODE_ENV
         env:
           NODE_ENV: development
