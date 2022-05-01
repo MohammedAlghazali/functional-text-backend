@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "test": "env-cmd -f .env.test jest",
-    "start": "env-cmd -f .env.production  node ./dist",
+    "start": "node ./dist",
     "dev": "env-cmd -f .env.development nodemon ./src"
   },
   "repository": {
