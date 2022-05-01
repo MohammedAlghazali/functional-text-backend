@@ -7,7 +7,9 @@ import { addUserSchema } from '../validation/userValidation';
 import { STATUS } from '../config/constants';
 
 export const addUser = async (req: Request, res: Response) => {
-  const { firstName, lastName, email, password, phoneNumber } = req.body;
+  const {
+    firstName, lastName, email, password, phoneNumber,
+  } = req.body;
   try {
     const validationResults = await validator({
       schema: addUserSchema,
