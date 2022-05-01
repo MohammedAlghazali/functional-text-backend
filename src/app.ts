@@ -11,6 +11,7 @@ const { port } = environment;
 
 connectDb();
 
+app.use(express.json());
 app.use(compression());
 app.use(cors());
 app.disable('x-powered-by');
