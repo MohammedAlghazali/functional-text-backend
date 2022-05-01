@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "env-cmd -f .env.test jest",
-    "start": "env-cmd -f .env.production node ./dist",
-    "dev": "env-cmd -f .env.development nodemon ./src"
+    "test": "NODE_ENV=test env-cmd -f .env.test  jest",
+    "start": "env-cmd -f .env.production NODE_ENV=production  node ./dist",
+    "dev": "env-cmd -f .env.development NODE_ENV=development nodemon ./src"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,13 @@
 import mongoose from 'mongoose';
 import environment from '../config/environment';
 
-const dbUri = environment.database.uri;
+const { database, nodeEnv } = environment;
+
+let dbUri = database.uri;
+
+if (nodeEnv === 'test') {
+  dbUri = database.testUri;
+}
 
 const connectDb = () => {
   mongoose.connect(dbUri);
