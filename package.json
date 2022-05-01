@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "jest",
-    "start": "env-cmd -f .env.production node ./dist",
-    "dev": "env-cmd -f .env.development nodemon ./src"
+    "test": "NODE_ENV=test env-cmd -f .env.test  jest",
+    "start": "env-cmd -f .env.production NODE_ENV=production  node ./dist",
+    "dev": "env-cmd -f .env.development NODE_ENV=development nodemon ./src"
   },
   "repository": {
     "type": "git",
@@ -21,27 +21,32 @@
   },
   "homepage": "https://github.com/MohammedAlghazali/functional-text-backend#readme",
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
     "@types/compression": "^1.7.2",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
+    "@types/mocha": "^9.1.1",
+    "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.21.0",
     "@typescript-eslint/parser": "^5.21.0",
     "eslint": "^8.14.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "jest": "^28.0.3",
+    "jest": "^27.5.1",
     "nodemon": "^2.0.16",
-    "supertest": "^6.2.3",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.6.4"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "env-cmd": "^10.1.0",
     "express": "^4.18.1",
     "mongoose": "^6.3.1",
+    "supertest": "^6.2.3",
+    "ts-jest": "^27.1.4",
     "uninstall": "0.0.0",
     "yup": "^0.32.11"
   }

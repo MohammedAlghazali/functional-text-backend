@@ -1,7 +1,17 @@
 /* eslint-disable import/prefer-default-export */
-import { getUsers } from '../repositories/userRepository';
+import { createUser } from '../repositories/userRepository';
+import { CreateUserInterface } from '../interfaces/createUserInterface';
 
-export const getUsersData = () => {
-  const usersData = getUsers();
-  return usersData;
+export const createUserService = async (user: CreateUserInterface) => {
+  const {
+    firstName, lastName, email, countryCode, phoneNumber, _id,
+  } = await createUser(user);
+  return {
+    firstName,
+    lastName,
+    email,
+    countryCode,
+    phoneNumber,
+    _id,
+  };
 };
