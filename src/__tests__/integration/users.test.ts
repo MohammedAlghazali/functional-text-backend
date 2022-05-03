@@ -3,8 +3,8 @@ import supertest from 'supertest';
 import assert from 'assert';
 import mongoose from 'mongoose';
 
-import app from '../app';
-import { resetDatabase } from '../helpers/databaseHelpers';
+import app from '../../app';
+import { resetDatabase } from '../../helpers/databaseHelpers';
 
 const request = supertest(app);
 
@@ -12,10 +12,10 @@ describe('POST /users', () => {
   beforeAll(async () => {
     await resetDatabase();
   });
-  afterAll(() => {
+  afterAll(async () => {
     mongoose.connection.close();
   });
-  it('Success | Create a new user successfully', (done) => {
+  it('Case: Create a new user successfully', (done) => {
     const requestBody = {
       firstName: 'Mohammed',
       lastName: 'Alghazali',
@@ -43,7 +43,7 @@ describe('POST /users', () => {
       .catch((err) => done(err));
   });
 
-  it('Failed | Create a new user with an existing email', (done) => {
+  it('Case: Create a new user with an existing email', (done) => {
     const requestBody = {
       firstName: 'Mohammed',
       lastName: 'Alghazali',
@@ -68,7 +68,7 @@ describe('POST /users', () => {
       .catch((err) => done(err));
   });
 
-  it('Failed | Create a new user with missing fields', (done) => {
+  it('Case: Create a new user with missing fields', (done) => {
     const requestBody = {
       firstName: 'Mohammed',
       password: 'mohammed1A',
@@ -91,7 +91,7 @@ describe('POST /users', () => {
       .catch((err) => done(err));
   });
 
-  it('Failed | Create a new user with password do not match the constraint', (done) => {
+  it('Case: Create a new user with password do not match the constraint', (done) => {
     const requestBody = {
       firstName: 'Mohammed',
       lastName: 'Alghazali',

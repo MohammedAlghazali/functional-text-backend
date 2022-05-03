@@ -1,7 +1,7 @@
 import yup from 'yup';
 
 const validator = async ({ schema, data }: { schema: yup.AnyObjectSchema, data: any }) => {
-  const result = { isValid: true, error: [] };
+  const result = { isValid: true, error: '' };
   try {
     await schema.validate(data, { abortEarly: false });
   } catch (error: any) {
