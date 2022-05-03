@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "env-cmd -f .env.test jest",
+    "test": "env-cmd -f .env.test jest --verbose ./src/__tests__",
     "start": "node ./dist",
     "dev": "env-cmd -f .env.development nodemon ./src"
   },
