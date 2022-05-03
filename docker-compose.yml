@@ -3,6 +3,7 @@ version: "3"
 services:
   web:
     image: web-backend
+    command: ["npm", "run", "dev"]
     build: ./
     volumes:
       - .:/usr/src/app
